@@ -10,7 +10,7 @@ class UserTest extends \Codeception\TestCase\Test
      * @var \UnitTester
      */
     protected $tester;
-@Test
+
     public function testRegister()
     {
         $email = 'johndoe@example.com';
