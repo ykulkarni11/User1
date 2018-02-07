@@ -23,9 +23,9 @@ jobs:
       - run: php artisan migrate --env=testing --database=sqlite_testing --force
       - run: ./vendor/bin/codecept build
       - run: ./vendor/bin/codecept run
-      test:
+    test:
         post:
-        - mkdir -p $CIRCLE_TEST_REPORTS/codeception/
-        - find . -name '*.xml' -exec cp {} $CIRCLE_TEST_REPORTS/codeception/ \;
-        - find ./ -type f -exec sed -i '' 's/class=/UserTest=/g' {} \;
+      - mkdir -p $CIRCLE_TEST_REPORTS/codeception/
+      - find . -name '*.xml' -exec cp {} $CIRCLE_TEST_REPORTS/codeception/ \;
+      - find ./ -type f -exec sed -i '' 's/class=/UserTest=/g' {} \;
       
